@@ -6,20 +6,20 @@
 <form action="" method="post">
 <h1>Perguntas sobre Pokemon</h1>
 <label for="favorito">Qual seu Pokemon favorito?</label>
-<br></br><input type="text" name="Pokemon favorito" id="favorito">
+<br></br><input type="text" name="Pokemon favorito" id="favorito" required>
 <br>
 </br>
-<label for="evolucao">Em qual nível o Dragonair evoluí para Dragonite?</label>
+<label for="evolucao">Em qual nível você acha que o Dragonair evoluí para Dragonite?</label>
 <br>
 </br>
 <label for="evolucao">45</label>
-<input id="evolucao" name="Evolução Dragonite" type="range" min=45 max="55" step="5">
+<input id="evolucao" name="Evolução Dragonite" type="range" min=45 max="55" step="5" required>
 <label for="evolucao">55</label>
 <br>
 </br>
-<label for="Iniciais">Qual inicial você prefere para começar?</label>
+<label for="iniciais">Qual inicial você prefere para começar?</label>
 <br>
-<p id="Iniciais">
+<p id="iniciais">
 <input id="charmander" name="Inicial Charmander" type="radio" value="Charmander">
 <label for="charmander">Charmander</label>
 <br>
@@ -31,7 +31,7 @@
 </p>
 <label for="tipo">Qual seu tipo de Pokemon favorito?</label>
 <br>
-<input id="tipo" list="tipos" name="Tipo de Pokemon">
+<input id="tipo" list="tipos" name="Tipo de Pokemon" required>
 <datalist id="tipos" name="Tipo de Pokemon">
 <option value="Normal"></option>
 <option value="Fogo"></option>
@@ -61,6 +61,7 @@
 <input type="submit" value="Enviar">
 </form>
 </section>
+<h2>Feito por Gabriel Pinheiro Maia</h2>
 </center>
 </body>
 </html>
