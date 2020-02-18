@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+	<input type="text" id="demo1">
+	<h4>+</h4>
+	<input type="text" id="demo2">
+	<br>
+	</br>
+	<h4>=</h4>
+	<table table border="1"><td>Resultado<br><center>=<div id="resultado"></div></td></center></table>
+	<br>
+	<button onclick="soma()">=</button>
+</center>
+<script>
+  function soma(){
+		var a;
+		a = parseFloat(document.getElementById("demo1").value);
+		var b;
+		b = parseFloat(document.getElementById("demo2").value);
+		var c;
+		c = document.getElementById("resultado").innerHTML = a+b;
+		}
+</script>
+</body>
+</html>
