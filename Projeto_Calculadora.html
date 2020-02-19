@@ -3,22 +3,78 @@
 <body>
 <center>
 	<input type="text" id="demo1">
-	<h4>+</h4>
+	<br>
+	</br>
 	<input type="text" id="demo2">
 	<br>
 	</br>
 	<table table border="1"><td>Resultado<br><center>=<div id="resultado"></div></td></center></table>
 	<br>
-	<button onclick="soma()">Soma</button>
+	<select>
+	<option value="esc">--Escolha--</option>
+	<option value="mais">Soma</option>
+	<option value="menos">Subtração</option>
+	<option value="dup">Multiplicação</option>
+	<option value="div">Divisão</option>
+	</select>
 </center>
 <script>
-  function soma(){
-		var a;
+		let select = document.querySelector("select");
+		
+		select.addEventListener("change", operador);
+		
+		function operador(){
+		
+		let escolha = select.value;
+		
+		if (escolha === "mais"){
+		//Função para soma.
+		let a;
 		a = parseFloat(document.getElementById("demo1").value);
-		var b;
+		
+		let b;
 		b = parseFloat(document.getElementById("demo2").value);
-		var c;
-		c = document.getElementById("resultado").innerHTML = a+b;
+		
+		document.getElementById("resultado").innerHTML = a+b;
+		}
+		//Função para subtração
+		else if (escolha === "menos"){
+		
+		let a;
+		a = parseFloat(document.getElementById("demo1").value);
+		
+		let b;
+		b = parseFloat(document.getElementById("demo2").value);
+		
+		document.getElementById("resultado").innerHTML = a-b;
+		}
+		//Função para multiplicação
+		else if (escolha === "dup"){
+		
+		let a;
+		a = parseFloat(document.getElementById("demo1").value);
+		
+		let b;
+		b = parseFloat(document.getElementById("demo2").value);
+		
+		document.getElementById("resultado").innerHTML = a*b;
+		}
+		//Função para divisão
+		else if (escolha === "div"){
+		
+		let a;
+		a = parseFloat(document.getElementById("demo1").value);
+		
+		let b;
+		b = parseFloat(document.getElementById("demo2").value);
+		
+		document.getElementById("resultado").innerHTML = a/b;
+		}
+		
+		else if (escolha === "esc"){
+		
+		document.getElementById("resultado").innerHTML = " ";
+		}
 		}
 </script>
 <center>
