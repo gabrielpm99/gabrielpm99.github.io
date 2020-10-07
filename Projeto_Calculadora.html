@@ -2,6 +2,44 @@
 <html>
 
 <body>
+<style>
+
+body {
+background-color: lightgrey;
+}
+
+		 h1 {
+		 color: black;
+		 text-align: center;
+		 font-family: Georgia, serif;
+		 font-size: 40px;
+		 text-shadow: 1px 1px 2px blue;
+		 }
+		 
+		 h2 {
+		 color: black;
+		 text-align: center;
+		 font-family: Georgia, serif;
+		 font-size: 30px;
+		 text-shadow: 1px 1px 2px blue;
+		 }
+
+		 h3 {
+		 color: black;
+		 text-align: center;
+		 font-family: Georgia, serif;
+		 font-size: 20px;
+		 }
+		 
+		.center {
+		margin: auto;
+		border: 3px solid black;
+		width: 25px;
+		padding: 2px;
+		background-color: grey;
+		}
+
+</style>
 <center>
 	<h1>Calculadora Simples</h1>
 	<input type="text" id="demo1">
@@ -19,7 +57,7 @@
 	</select>
 	<br>
 	</br>
-	<table table border="1"><td>Resultado<br><center>=<div id="resultado"></div></td></center></table>
+	<table><td class="center"><h3>Resultado</h3><center><h3>=</h3><div id="resultado"></div></td></center></table>
 	<br>
 </center>
 <script>
