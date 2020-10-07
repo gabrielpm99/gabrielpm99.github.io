@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
 <body>
+<style>
+
+body {
+background-color: lightgrey;
+}
+
+		 h1 {
+		 color: black;
+		 text-align: center;
+		 font-family: Georgia, serif;
+		 font-size: 40px;
+		 text-shadow: 1px 1px 2px blue;
+		 }
+		 
+		 h2 {
+		 color: black;
+		 text-align: center;
+		 font-family: Georgia, serif;
+		 font-size: 25px;
+		 text-shadow: 1px 1px 2px blue;
+		 }
+
+		 .center {
+		 color: black;
+		 text-align: center;
+		 font-family: Georgia, serif;
+		 font-size: 15px;
+		 text-shadow: 1px 1px 1px blue;
+		 }
+
+</style>
 <center>
 <section>
 <form action="" method="post">
 <h1>Perguntas sobre Pokemon</h1>
-<label for="favorito">Qual seu Pokemon favorito?</label>
+<label for="favorito" class="center">Qual seu Pokemon favorito?</label>
 <br></br><input type="text" name="Pokemon favorito" id="favorito" required>
 <br>
 </br>
-<label for="evolucao">Em qual nível você acha que o Dragonair evoluí para Dragonite?</label>
+<label for="evolucao" class="center">Em qual nível você acha que o Dragonair evoluí para Dragonite?</label>
 <br>
 </br>
 <label for="evolucao">45</label>
@@ -17,19 +48,19 @@
 <label for="evolucao">55</label>
 <br>
 </br>
-<label for="iniciais">Qual inicial você prefere para começar?</label>
+<label for="iniciais" class="center">Qual inicial você prefere para começar?</label>
 <br>
 <p id="iniciais">
 <input id="charmander" name="Inicial Charmander" type="radio" value="Charmander">
-<label for="charmander">Charmander</label>
+<label for="charmander" class="center">Charmander</label>
 <br>
 <input id="squirtle" name="Inicial Squirtle" type="radio" value="Squirtle">
-<label for="squirtle">Squirtle</label>
+<label for="squirtle" class="center">Squirtle</label>
 <br>
 <input id="bulbasaur" name="Inicial Bulbasaur" type="radio" value="Bulbasaur">
-<label for="bulbasaur">Bulbasaur</label>
+<label for="bulbasaur" class="center">Bulbasaur</label>
 </p>
-<label for="tipo">Qual seu tipo de Pokemon favorito?</label>
+<label for="tipo" class="center">Qual seu tipo de Pokemon favorito?</label>
 <br>
 <input id="tipo" list="tipos" name="Tipo de Pokemon" required>
 <datalist id="tipos" name="Tipo de Pokemon">
@@ -54,7 +85,7 @@
 </datalist>
 <br>
 </br>
-<label for="lvl">Diga-nos em qual nível seu Pokemon favorito evoluí.</label>
+<label for="lvl" class="center">Diga-nos em qual nível seu Pokemon favorito evoluí.</label>
 <br><textarea id="lvl" rows="7" cols="25" name="Pokemon favorito evolução"></textarea>
 <br>
 </br>
