@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+</center>
+<style>
+
+	.button{
+	background-color: black;
+	  border: 1px solid white;
+	  color: white;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 15px;
+	  cursor: pointer;
+	}
+
+	body{
+	background-color: lightgrey;
+	}
+
+	h3{
+	color: black;
+	}
+
+
+</style>
+<script>
+
+function desenhar(){
+	
+	ctx.clearRect(0, 0, 1250, 500);
+	
+	ctx.fillStyle = "#fff";
+	ctx.fillRect(475, 75, 400, 400);
+	ctx.strokeRect(475, 75, 400, 400);
+	ctx.strokeRect(475, 125, 400, 0);
+	ctx.strokeRect(475, 175, 400, 0);
+	ctx.strokeRect(475, 225, 400, 0);
+	ctx.strokeRect(475, 275, 400, 0);
+	ctx.strokeRect(475, 325, 400, 0);
+	ctx.strokeRect(475, 375, 400, 0);
+	ctx.strokeRect(475, 425, 400, 0);
+	ctx.strokeRect(525, 75, 0, 400);
+	ctx.strokeRect(575, 75, 0, 400);
+	ctx.strokeRect(625, 75, 0, 400);
+	ctx.strokeRect(675, 75, 0, 400);
+	ctx.strokeRect(725, 75, 0, 400);
+	ctx.strokeRect(775, 75, 0, 400);
+	ctx.strokeRect(825, 75, 0, 400);
+	ctx.fillStyle = "#000000"
+	ctx.font = "30px Georgia";
+	ctx.fillText("A", 490, 60)
+	ctx.fillText("B", 540, 60)
+	ctx.fillText("C", 590, 60)
+	ctx.fillText("D", 640, 60)
+	ctx.fillText("E", 690, 60)
+	ctx.fillText("F", 740, 60)
+	ctx.fillText("G", 790, 60)
+	ctx.fillText("H", 840, 60)
+	ctx.fillText("1", 440, 109)
+	ctx.fillText("2", 440, 159)
+	ctx.fillText("3", 440, 209)
+	ctx.fillText("4", 440, 259)
+	ctx.fillText("5", 440, 309)
+	ctx.fillText("6", 440, 359)
+	ctx.fillText("7", 440, 409)
+	ctx.fillText("8", 440, 459)
+}
+
+function lerPosicao(){
+		
+	posEscolhidas++;
+	
+	var valorDaPosicao = document.getElementById("lugar").value;
+	var colunas = valorDaPosicao.charAt(0);
+	var linhas = valorDaPosicao.charAt(1);
+	
+	switch (colunas){
+	
+		case 'A':
+			posC = 0;
+			break;
+			
+		case 'B':
+			posC = 1;
+			break;
+		
+		case 'C':
+			posC = 2; 
+			break;
+		
+		case 'D':
+			posC = 3; 
+			break;
+		
+		case 'E':
+			posC = 4; 
+			break;
+		
+		case 'F':
+			posC = 5; 
+			break;
+		
+		case 'G':
+			posC = 6; 
+			break;
+			
+		case 'H':
+			posC = 7;
+			break;
+	
+		default:
+			alert("Posição inválida.");
+	}
+
+	switch (linhas){
+	
+		case '1':
+			posL = 0;
+			break;
+			
+		case '2':
+			posL = 1;
+			break;
+		
+		case '3':
+			posL = 2; 
+			break;
+		
+		case '4':
+			posL = 3; 
+			break;
+		
+		case '5':
+			posL = 4; 
+			break;
+			
+		case '6':
+			posL = 5; 
+			break;
+		
+		case '7':
+			posL = 6; 
+			break;
+		
+		case '8':
+			posL = 7;
+			break;
+
+		default:
+			alert("Posição inválida.");
+	}
+	
+	if(valorDaPosicao.length > 2){
+	
+	alert("Posição inválida.")
+	
+	}
+	
+	avaliarPosicao();
+
+}
+
+function fimDeJogo(X){
+
+for(var i = 0; i < mapa.length; i++){
+		for(var j = 0; j < mapa[i].length; j++){
+			if(mapa[i][j] === 1)
+			{ctx.fillText(X, 490+50*i, 111+50*j)}
+		}
+	}
+}
+
+function avaliarPosicao(){
+
+	if(mapa[posC][posL] === 1){
+		document.getElementById("fim").innerHTML = "Você perdeu."
+		fimDeJogo("X");
+	}
+
+	else if(posEscolhidas === (l*c - quantidadeDeBombas)){
+		document.getElementById("fim").innerHTML = "Você ganhou!"
+		fimDeJogo("D");
+	}
+	
+	else{
+		var contador = 0;
+		
+		for(var i = -1; i < 2; i++){
+			for(var j = -1; j < 2; j++){
+				if(i === 0 && j === 0){
+					//nada
+				}
+				else if((posC+i) < 0 || (posL+j) < 0){
+					//nada
+				
+				}
+				else if((posC+i) >= c || (posL+j) >= l){
+					//nada
+				}
+				else if(mapa[posC+i][posL+j] === 1){
+					contador++;
+				}
+			}
+		}
+
+		ctx.fillText(contador, 493+50*posC, 107+50*posL)
+	}
+}
+
+function posBombas(){
+
+	var contadorBombas = 0;
+
+	for(var i = 0; i < mapa.length; i++){
+		for(var j = 0; j < mapa[i].length; j++){
+			mapa[i][j] = 0;
+		}
+	}
+
+	while(contadorBombas < quantidadeDeBombas){
+		for(var i = 0; i < mapa.length; i++){
+			for(var j = 0; j < mapa[i].length; j++){
+				var valorRandomico = Math.random();
+				if(valorRandomico > 0.95 && contadorBombas < quantidadeDeBombas && mapa[i][j] === 0){
+					contadorBombas++;
+					mapa[i][j] = 1;
+				}
+			}
+		}
+	}
+}
+
+function selecionarDificuldade(){
+	
+	desenhar();
+	
+	dificuldadeDeJogo = document.getElementById("dificuldade").value;
+	
+	switch(dificuldadeDeJogo){
+
+		case "facil":	
+			quantidadeDeBombas = 8;
+			break;
+
+		case "medio":
+			quantidadeDeBombas = 12;
+			break;
+			
+		case "dificil":
+			quantidadeDeBombas = 16;
+			break;
+	
+		default:
+			quantidadeDeBombas = 0;
+	
+	}
+	
+	posBombas();
+
+}
+</script>
+<center>
+<select id="dificuldade" onchange="selecionarDificuldade()">
+<option>--Escolha--</option>
+<option value="facil">Fácil</option>
+<option value="medio" >Médio</option>
+<option value="dificil">Difícil</option>
+</select>
+<p id="fim"></p>
+</center>
+<canvas id="myCanvas" width="1250" height="480"></canvas>
+<center>
+<textarea id="lugar"></textarea>
+<br>
+<button class="button" type="button" onclick="lerPosicao()" id="botao">Ok</button>
+<button class="button" onclick="location.reload()">Resetar</button>
+</center>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+l = 8;
+c = 8;
+
+var mapa = new Array(l);
+for(var i = 0; i < mapa.length; i++){
+	mapa[i] = new Array(c);
+}
+
+var quantidadeDeBombas;
+var dificuldadeDeJogo;
+var posC;
+var posL;
+var posEscolhidas = 0;
+
+desenhar();
+
+</script>
+<center>
+<h3>Feito por Gabriel Pinheiro Maia</h3>
+</center>
+</body>
+</html>
