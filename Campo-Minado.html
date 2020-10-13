@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-<center>
-</center>
 <style>
 
 	.button{
@@ -14,6 +12,8 @@
 	  display: inline-block;
 	  font-size: 15px;
 	  cursor: pointer;
+	  width: 80px;
+	  height: 25px;
 	}
 
 	body{
@@ -24,49 +24,88 @@
 	color: black;
 	}
 
+	h4{
+	position: absolute;
+	bottom: 100px;
+	left: 65px;
+	border: 1px solid black;
+	width: 300px;
+	text-align: center;
+	padding: 5px;
+	}
+
+	.fundo{
+	background-color: white;
+	}
+
+	.centralizado{
+	position: absolute;
+	bottom: 75px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	}
+	
+	.centralizadoBotoes{
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	}
+	
+	.centralizadoH3{
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	}
+	
+	textarea{
+	resize: none;
+	}
 
 </style>
 <script>
 
 function desenhar(){
 	
-	ctx.clearRect(0, 0, 1250, 500);
+	ctx.clearRect(0, 0, 500, 500);
 	
 	ctx.fillStyle = "#fff";
-	ctx.fillRect(475, 75, 400, 400);
-	ctx.strokeRect(475, 75, 400, 400);
-	ctx.strokeRect(475, 125, 400, 0);
-	ctx.strokeRect(475, 175, 400, 0);
-	ctx.strokeRect(475, 225, 400, 0);
-	ctx.strokeRect(475, 275, 400, 0);
-	ctx.strokeRect(475, 325, 400, 0);
-	ctx.strokeRect(475, 375, 400, 0);
-	ctx.strokeRect(475, 425, 400, 0);
-	ctx.strokeRect(525, 75, 0, 400);
-	ctx.strokeRect(575, 75, 0, 400);
-	ctx.strokeRect(625, 75, 0, 400);
-	ctx.strokeRect(675, 75, 0, 400);
-	ctx.strokeRect(725, 75, 0, 400);
-	ctx.strokeRect(775, 75, 0, 400);
-	ctx.strokeRect(825, 75, 0, 400);
+	ctx.fillRect(50, 50, 400, 400);
+	ctx.strokeRect(50, 50, 400, 400);
+	ctx.strokeRect(50, 100, 400, 0);
+	ctx.strokeRect(50, 150, 400, 0);
+	ctx.strokeRect(50, 200, 400, 0);
+	ctx.strokeRect(50, 250, 400, 0);
+	ctx.strokeRect(50, 300, 400, 0);
+	ctx.strokeRect(50, 350, 400, 0);
+	ctx.strokeRect(50, 400, 400, 0);
+	ctx.strokeRect(100, 50, 0, 400);
+	ctx.strokeRect(150, 50, 0, 400);
+	ctx.strokeRect(200, 50, 0, 400);
+	ctx.strokeRect(250, 50, 0, 400);
+	ctx.strokeRect(300, 50, 0, 400);
+	ctx.strokeRect(350, 50, 0, 400);
+	ctx.strokeRect(400, 50, 0, 400);
 	ctx.fillStyle = "#000000"
 	ctx.font = "30px Georgia";
-	ctx.fillText("A", 490, 60)
-	ctx.fillText("B", 540, 60)
-	ctx.fillText("C", 590, 60)
-	ctx.fillText("D", 640, 60)
-	ctx.fillText("E", 690, 60)
-	ctx.fillText("F", 740, 60)
-	ctx.fillText("G", 790, 60)
-	ctx.fillText("H", 840, 60)
-	ctx.fillText("1", 440, 109)
-	ctx.fillText("2", 440, 159)
-	ctx.fillText("3", 440, 209)
-	ctx.fillText("4", 440, 259)
-	ctx.fillText("5", 440, 309)
-	ctx.fillText("6", 440, 359)
-	ctx.fillText("7", 440, 409)
-	ctx.fillText("8", 440, 459)
+	ctx.fillText("A", 65, 35)
+	ctx.fillText("B", 115, 35)
+	ctx.fillText("C", 165, 35)
+	ctx.fillText("D", 215, 35)
+	ctx.fillText("E", 265, 35)
+	ctx.fillText("F", 315, 35)
+	ctx.fillText("G", 365, 35)
+	ctx.fillText("H", 415, 35)
+	ctx.fillText("1", 15, 83)
+	ctx.fillText("2", 15, 133)
+	ctx.fillText("3", 15, 182)
+	ctx.fillText("4", 15, 232)
+	ctx.fillText("5", 15, 283)
+	ctx.fillText("6", 15, 335)
+	ctx.fillText("7", 15, 382)
+	ctx.fillText("8", 15, 435)
+	
 }
 
 function lerPosicao(){
@@ -168,7 +207,7 @@ function fimDeJogo(X){
 for(var i = 0; i < mapa.length; i++){
 		for(var j = 0; j < mapa[i].length; j++){
 			if(mapa[i][j] === 1)
-			{ctx.fillText(X, 490+50*i, 111+50*j)}
+			{ctx.drawImage(imagem, 50, 50, 1100, 1100, 50+50*i, 50+50*j, 51.8, 48.5)}
 		}
 	}
 }
@@ -206,7 +245,7 @@ function avaliarPosicao(){
 			}
 		}
 
-		ctx.fillText(contador, 493+50*posC, 107+50*posL)
+		ctx.fillText(contador, 67+50*posC, 84+50*posL)
 	}
 }
 
@@ -250,7 +289,7 @@ function selecionarDificuldade(){
 			break;
 			
 		case "dificil":
-			quantidadeDeBombas = 16;
+			quantidadeDeBombas = 63;
 			break;
 	
 		default:
@@ -264,19 +303,24 @@ function selecionarDificuldade(){
 </script>
 <center>
 <select id="dificuldade" onchange="selecionarDificuldade()">
-<option>--Escolha--</option>
+<option>--Dificuldade--</option>
 <option value="facil">Fácil</option>
 <option value="medio" >Médio</option>
 <option value="dificil">Difícil</option>
 </select>
 <p id="fim"></p>
+<canvas id="myCanvas" width="500" height="500"></canvas>
+<img src="https://i.pinimg.com/originals/9d/17/83/9d178396e57a9d656392493aaafad2fb.jpg" id="aguaViva" alt="Água Viva" width="0.1" height="0.1">
 </center>
-<canvas id="myCanvas" width="1250" height="480"></canvas>
 <center>
+<div class="centralizado">
 <textarea id="lugar"></textarea>
+</div>
 <br>
+<div class="centralizadoBotoes">
 <button class="button" type="button" onclick="lerPosicao()" id="botao">Ok</button>
 <button class="button" onclick="location.reload()">Resetar</button>
+</div>
 </center>
 
 <script>
@@ -296,12 +340,23 @@ var dificuldadeDeJogo;
 var posC;
 var posL;
 var posEscolhidas = 0;
+var imagem = document.getElementById("aguaViva");
 
 desenhar();
 
 </script>
 <center>
+<div class="centralizadoH3">
 <h3>Feito por Gabriel Pinheiro Maia</h3>
+</div>
 </center>
+<h4 class="fundo">-Instruções-
+<br></br>Escolha a dificuldade.
+<br></br>Digite no campo de texto a posição no campo que você quer descobrir e clique no botão Ok.
+<br></br>Exemplo: A1 ou B1 ou C1
+<br></br>O número que aparecer no quadrado informará a quantidade total de minas nos 8 quadrados em volta dele.
+<br></br>Ao descobrir uma bomba, você irá perder o jogo, clique no botão Resetar para reiniciar o jogo. 
+<br></br>Ao marcar todas as posições sem descobrir uma bomba, você ira ganhar o jogo. 
+<br></br></h4>
 </body>
 </html>
