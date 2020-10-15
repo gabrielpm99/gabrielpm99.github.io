@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
-<body>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+<body id="corDeFundo">
 <style>
+
+	#corDeFundo{
+	background-color: lightgrey;
+	}
 
 	.button{
 	background-color: black;
@@ -17,7 +20,7 @@
 	  height: 25px;
 	}
 
-	@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	@media only screen and (min-device-width : 480px) and (max-device-width : 640px) {
   body {
     background: #999;
     width: 100%;
@@ -36,9 +39,6 @@
 	padding: 5px;
 	bottom: 15%;
 	transform: translate(18%, 0);
-	}
-
-	.fundo{
 	background-color: white;
 	}
 
@@ -360,7 +360,7 @@ desenhar();
 <h3>Feito por Gabriel Pinheiro Maia</h3>
 </div>
 </center>
-<h4 class="fundo">-Instruções-
+<h4 class="">-Instruções-
 <br></br>Escolha a dificuldade.
 <br></br>Digite no campo de texto a posição no campo que você quer descobrir e clique no botão Ok.
 <br></br>Exemplo: A1 ou B1 ou C1
