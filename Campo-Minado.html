@@ -21,7 +21,7 @@
 	  height: 25px;
 	}
 
-	@media only screen and (min-device-width : 480px) and (max-device-width : 640px) {
+	@media only screen and (min-device-width : 720px) and (max-device-width : 1080px) {
   body {
     background: #999;
     width: 100%;
@@ -32,32 +32,17 @@
 	color: black;
 	}
 
-	h4{
-	position: absolute;
-	border: 1px solid black;
-	width: 300px;
-	text-align: center;
-	padding: 5px;
-	bottom: 15%;
-	transform: translate(18%, 0);
-	background-color: white;
-	}
-
 	.centralizado{
 	position: absolute;
 	bottom: 75px;
 	left: 50%;
-	transform: translate(-50%, 0);
-	bottom: 12%;
-	transform: translate(-50%, 0);
+	transform: translate(-50%, 0);	
 	}
 	
 	.centralizadoBotoes{
 	position: absolute;
 	bottom: 50px;
 	left: 50%;
-	transform: translate(-50%, 0);
-	bottom: 8%;
 	transform: translate(-50%, 0);
 	}
 	
@@ -66,12 +51,18 @@
 	bottom: 0px;
 	left: 50%;
 	transform: translate(-50%, 0);
-	bottom: 0.1%;
-	transform: translate(-50%, 0);
 	}
 	
 	textarea{
 	resize: none;
+	}
+
+	.mensagemFinal{
+	position: absolute;
+	color: black;
+	left: 50%;
+	transform: translate(-50%, 0);
+	bottom: 105px;
 	}
 
 </style>
@@ -311,6 +302,11 @@ function selecionarDificuldade(){
 	posBombas();
 
 }
+
+function comoJogar (){
+	alert('Como Jogar?                                                                                                                                                      Escolha a dificuldade.                                                                                                                                          Digite no campo de texto a posição no campo que você quer descobrir e clique no botão Ok.                                                                                                                                                     Exemplo: A1 ou B1 ou C1                                                                                                                                          O número que aparecer no quadrado informará a quantidade total de minas nos 8 quadrados em volta dele.                                                                                                                                        Ao descobrir uma bomba, você irá perder o jogo, clique no botão Resetar para reiniciar o jogo.                                                                                                                                                 Ao marcar todas as posições sem descobrir uma bomba, você ira ganhar o jogo. ')
+}
+
 </script>
 <center>
 <select id="dificuldade" onchange="selecionarDificuldade()">
@@ -319,7 +315,8 @@ function selecionarDificuldade(){
 <option value="medio" >Médio</option>
 <option value="dificil">Difícil</option>
 </select>
-<p id="fim"></p>
+<br>
+<p id="fim" class="mensagemFinal"></p>
 <canvas id="myCanvas" width="500" height="500"></canvas>
 <img src="https://i.pinimg.com/originals/9d/17/83/9d178396e57a9d656392493aaafad2fb.jpg" id="aguaViva" alt="Água Viva" width="0.1" height="0.1">
 </center>
@@ -331,6 +328,7 @@ function selecionarDificuldade(){
 <div class="centralizadoBotoes">
 <button class="button" type="button" onclick="lerPosicao()" id="botao">Ok</button>
 <button class="button" onclick="location.reload()">Resetar</button>
+<button class="button" onclick="comoJogar()">Instruções</button>
 </div>
 </center>
 
@@ -361,13 +359,6 @@ desenhar();
 <h3>Feito por Gabriel Pinheiro Maia</h3>
 </div>
 </center>
-<h4 class="">-Instruções-
-<br></br>Escolha a dificuldade.
-<br></br>Digite no campo de texto a posição no campo que você quer descobrir e clique no botão Ok.
-<br></br>Exemplo: A1 ou B1 ou C1
-<br></br>O número que aparecer no quadrado informará a quantidade total de minas nos 8 quadrados em volta dele.
-<br></br>Ao descobrir uma bomba, você irá perder o jogo, clique no botão Resetar para reiniciar o jogo. 
-<br></br>Ao marcar todas as posições sem descobrir uma bomba, você ira ganhar o jogo. 
-<br></br></h4>
+
 </body>
 </html>
