@@ -303,10 +303,6 @@ function selecionarDificuldade(){
 
 }
 
-function comoJogar (){
-	alert('Como Jogar?                                                                                                                                                      Escolha a dificuldade.                                                                                                                                          Digite no campo de texto a posição no campo que você quer descobrir e clique no botão Ok.                                                                                                                                                     Exemplo: A1 ou B1 ou C1                                                                                                                                          O número que aparecer no quadrado informará a quantidade total de minas nos 8 quadrados em volta dele.                                                                                                                                        Ao descobrir uma bomba, você irá perder o jogo, clique no botão Resetar para reiniciar o jogo.                                                                                                                                                 Ao marcar todas as posições sem descobrir uma bomba, você ira ganhar o jogo. ')
-}
-
 </script>
 <center>
 <select id="dificuldade" onchange="selecionarDificuldade()">
@@ -328,7 +324,6 @@ function comoJogar (){
 <div class="centralizadoBotoes">
 <button class="button" type="button" onclick="lerPosicao()" id="botao">Ok</button>
 <button class="button" onclick="location.reload()">Resetar</button>
-<button class="button" onclick="comoJogar()">Instruções</button>
 </div>
 </center>
 
