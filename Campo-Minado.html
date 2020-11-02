@@ -29,6 +29,12 @@
 	resize: none;
 	}
 
+	#tudoImportante{
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
 </style>
 <script>
 
@@ -269,6 +275,7 @@ function selecionarDificuldade(){
 
 </script>
 <center>
+	<div id ="tudoImportante">
 	<select id="dificuldade" onchange="selecionarDificuldade()">
 		<option>--Dificuldade--</option>
 		<option value="facil">Fácil</option>
@@ -283,6 +290,7 @@ function selecionarDificuldade(){
 	<br>
 	<button class="button" type="button" onclick="lerPosicao()" id="botao">Ok</button>
 	<button class="button" onclick="location.reload()">Resetar</button>
+	</div>
 </center>
 
 <script>
