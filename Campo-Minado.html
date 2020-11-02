@@ -24,11 +24,10 @@
 	h3{
 	color: black;
 	}
-	
+
 	textarea{
 	resize: none;
 	}
-
 
 </style>
 <script>
@@ -270,26 +269,20 @@ function selecionarDificuldade(){
 
 </script>
 <center>
-<select id="dificuldade" onchange="selecionarDificuldade()">
-<option>--Dificuldade--</option>
-<option value="facil">Fácil</option>
-<option value="medio" >Médio</option>
-<option value="dificil">Difícil</option>
-</select>
-<br>
-<p id="fim" class="mensagemFinal"></p>
-<canvas id="myCanvas" width="500" height="500"></canvas>
-<img src="https://i.pinimg.com/originals/9d/17/83/9d178396e57a9d656392493aaafad2fb.jpg" id="aguaViva" alt="Água Viva" width="0.1" height="0.1">
-</center>
-<center>
-<div class="centralizado">
-<textarea id="lugar"></textarea>
-</div>
-<br>
-<div class="centralizadoBotoes">
-<button class="button" type="button" onclick="lerPosicao()" id="botao">Ok</button>
-<button class="button" onclick="location.reload()">Resetar</button>
-</div>
+	<select id="dificuldade" onchange="selecionarDificuldade()">
+		<option>--Dificuldade--</option>
+		<option value="facil">Fácil</option>
+		<option value="medio" >Médio</option>
+		<option value="dificil">Difícil</option>
+	</select>
+	<p id="fim" class="mensagemFinal"></p>
+	<canvas id="myCanvas" width="500" height="500"></canvas>
+	<br>
+	<img src="https://i.pinimg.com/originals/9d/17/83/9d178396e57a9d656392493aaafad2fb.jpg" id="aguaViva" alt="Água Viva" width="0.1" height="0.1">
+	<textarea id="lugar"></textarea>
+	<br>
+	<button class="button" type="button" onclick="lerPosicao()" id="botao">Ok</button>
+	<button class="button" onclick="location.reload()">Resetar</button>
 </center>
 
 <script>
