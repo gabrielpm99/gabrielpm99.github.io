@@ -29,10 +29,8 @@
 	resize: none;
 	}
 
-	#tudoImportante{
-		margin-left: auto;
-		margin-right: auto;
-		text-align: center;
+	#posicaoCanvas{
+	margin: auto;
 	}
 
 </style>
@@ -275,7 +273,6 @@ function selecionarDificuldade(){
 
 </script>
 <center>
-	<div id ="tudoImportante">
 	<select id="dificuldade" onchange="selecionarDificuldade()">
 		<option>--Dificuldade--</option>
 		<option value="facil">Fácil</option>
@@ -283,14 +280,15 @@ function selecionarDificuldade(){
 		<option value="dificil">Difícil</option>
 	</select>
 	<p id="fim" class="mensagemFinal"></p>
+	<div id="posicaoCanvas">
 	<canvas id="myCanvas" width="500" height="500"></canvas>
+	</div>
 	<br>
 	<img src="https://i.pinimg.com/originals/9d/17/83/9d178396e57a9d656392493aaafad2fb.jpg" id="aguaViva" alt="Água Viva" width="0.1" height="0.1">
 	<textarea id="lugar"></textarea>
 	<br>
 	<button class="button" type="button" onclick="lerPosicao()" id="botao">Ok</button>
 	<button class="button" onclick="location.reload()">Resetar</button>
-	</div>
 </center>
 
 <script>
