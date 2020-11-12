@@ -70,7 +70,7 @@
 		<p id="contagemM">00 :</p>
 		<p id="contagemH">00 :</p>
 		<div>
-		<button onclick="zerarTudo()">Zerar</button>
+		<button onclick="zerarTudo(), ativarBotao()">Zerar</button>
 		</div>
 		<div>
 		<button onclick="clearInterval(intervalo), ativarBotao()">Parar</button>
@@ -102,7 +102,7 @@
 					zerarHoras();
 					zerarCentesimos();
 					correrTempo();
-				
+					clearInterval(intervalo);
 				}
 				
 				function adicionarCentesimos(){
