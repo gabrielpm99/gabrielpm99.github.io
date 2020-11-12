@@ -1,0 +1,217 @@
+<!-- Cronômetro -->
+<!DOCTYPE html>
+<html>
+	<body>
+	  <style>
+	  
+		  body{
+		  background-color: lightgrey;
+		  }
+		  
+		  #contagemC{
+		  color: black;
+		  font-family: Serif;
+		  font-size: 90px;
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		  transform: translate(220%, -150%);
+		  text-shadow: 2px 1px 0px white;
+		  }
+		  
+		  #contagemS{
+		  color: black;
+		  font-family: Serif;
+		  font-size: 90px;
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		  transform: translate(25%, -150%);
+		  text-shadow: 2px 1px 0px white;
+		  }
+		  
+		  #contagemM{
+		  color: black;
+		  font-family: Serif;
+		  font-size: 90px;
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		  transform: translate(-92%, -150%);
+		  text-shadow: 2px 1px 0px white;
+		  }
+		  
+		  #contagemH{
+		  color: black;
+		  font-family: Serif;
+		  font-size: 90px;
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		  transform: translate(-210%, -150%);
+		  text-shadow: 2px 1px 0px white;
+		  }
+		  
+		  button{
+		  background-color: black;
+		  border: 2px solid white;
+		  color: white;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+	  
+	  </style>
+	  <center>
+		<p id="contagemC">00</p>
+		<p id="contagemS">00 :</p>
+		<p id="contagemM">00 :</p>
+		<p id="contagemH">00 :</p>
+		<div>
+		<button onclick="zerarTudo()">Zerar</button>
+		</div>
+		<div>
+		<button onclick="clearInterval(intervalo), ativarBotao()">Parar</button>
+		</div>
+		<div id="divBotao">
+		<button id="botaoIniciar" onclick="intervalo = setInterval(correrTempo, 10), desativarBotao()">Iniciar</button>
+		</div>
+		<script>
+				
+				var div = document.getElementById("divBotao");
+				var centesimos = 0;
+				var segundos = 0;
+				var minutos = 0;
+				var horas = 0;
+	
+				function desativarBotao(){
+					document.getElementById("botaoIniciar").disabled = true;
+				
+				}
+	
+				function ativarBotao(){
+					document.getElementById("botaoIniciar").disabled = false;
+				
+				}
+	
+				function zerarTudo(){
+					zerarSegundos();
+					zerarMinutos();
+					zerarHoras();
+					zerarCentesimos();
+					correrTempo();
+				
+				}
+				
+				function adicionarCentesimos(){
+					centesimos++
+				
+				}
+				
+				function adicionarSegundos(){
+					segundos++
+				
+				}
+				
+				function adicionarMinuto(){
+					minutos++
+				
+				}
+			
+				function adicionarHoras(){
+					horas++
+				
+				}
+			
+				function zerarCentesimos(){
+					centesimos = 0;
+				
+				}
+			
+				function zerarSegundos(){
+					segundos = 0;
+				
+				}
+				
+				function zerarMinutos(){
+					minutos = 0;
+				
+				}
+			
+				function zerarHoras(){
+					horas = 0;
+				
+				}
+			
+				function correrTempo(){
+					
+					if(centesimos < 10){
+						document.getElementById("contagemC").innerHTML = '0' + centesimos;
+					
+					}
+					
+					if(segundos < 10){
+						document.getElementById("contagemS").innerHTML = '0' + segundos + ' : ';
+					
+					}
+					
+					if(minutos < 10){
+						document.getElementById("contagemM").innerHTML = '0' + minutos + ' : ';
+					
+					}
+					
+					if(horas < 10){
+						document.getElementById("contagemH").innerHTML = '0' + horas + ' : ';
+					
+					}
+					
+					if(centesimos >= 10){
+						document.getElementById("contagemC").innerHTML = centesimos;
+					
+					}
+					
+					if(segundos >= 10){
+						document.getElementById("contagemS").innerHTML = segundos + ' : ';
+					
+					}
+					
+					if(minutos >= 10){
+						document.getElementById("contagemM").innerHTML = minutos + ' : ';
+					
+					}
+					
+					if(horas >= 10){
+						document.getElementById("contagemH").innerHTML = horas + ' : ';
+					
+					}
+					
+					if(segundos < 60){
+						adicionarCentesimos()
+					
+					}
+				
+					if(centesimos === 100){
+						zerarCentesimos();
+						adicionarSegundos();
+					
+					}
+				
+					if(segundos === 60){
+						zerarSegundos();
+						adicionarMinuto();
+
+					}
+				
+					if(minutos === 60){
+						zerarMinutos();
+						adicionarHoras();
+						
+				}
+			}
+
+		 </script>
+	  </center>
+	</body>
+</html>
