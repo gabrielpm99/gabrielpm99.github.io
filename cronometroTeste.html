@@ -2,21 +2,10 @@
 <!DOCTYPE html>
 <html>
 	<body>
-	 <style>
+	  <style>
 	  
 		  body{
 		  background-color: lightgrey;
-		  }
-		  
-		  #contagemMobile{
-		  color: black;
-		  font-family: Serif;
-		  font-size: 90px;
-		  position: absolute;
-		  left: 50%;
-		  top: 50%;
-		  transform: translate(50%, -150%);
-		  text-shadow: 2px 1px 0px white;
 		  }
 		  
 		  #contagemC{
@@ -76,7 +65,7 @@
 	  
 	  </style>
 	  <center>
-		<p id="contagemMobile">0 : 0 : 0 : 0</p>
+		<p id="contagemMobile"></p>
 		<p id="contagemC">00</p>
 		<p id="contagemS">00 :</p>
 		<p id="contagemM">00 :</p>
@@ -90,9 +79,8 @@
 		<div id="divBotao">
 		<button id="botaoIniciar" onclick="intervalo = setInterval(correrTempo, 10), desativarBotao()">Iniciar</button>
 		</div>
-		</center>
-		<script type = "text / javascript" src = "// wurfl.io/wurfl.js">
-				
+		<script>
+			
 				var div = document.getElementById("divBotao");
 				var centesimos = 0;
 				var segundos = 0;
@@ -160,14 +148,22 @@
 			
 				function correrTempo(){
 					
-					if (WURFL.is_mobile === true && WURFL.form_factor === "Smartphone") {
-					
-					document.getElementById("contagemMobile").innerHTML = horas + ' : ' + minutos + ' : ' + segundos + ' : ' + centesimos;
-				
-					} 
+					if (screen.width < 640 || screen.height < 480) {
+						desenharTempoMobile();
 
-					else {
+					} 
 					
+					else {
+						desenharTempo();
+						
+					}
+					
+					function desenharTempoMobile(){
+						document.getElementById("contagemMobile").innerHTML = horas + ' : ' + minutos + ' : ' + segundos + ' : ' + centesimos;
+					
+					}
+					
+					function desenharTempo(){
 					if(centesimos < 10){
 						document.getElementById("contagemC").innerHTML = '0' + centesimos;
 					
